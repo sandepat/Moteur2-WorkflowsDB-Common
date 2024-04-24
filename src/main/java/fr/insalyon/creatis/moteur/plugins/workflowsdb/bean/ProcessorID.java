@@ -33,6 +33,7 @@
 package fr.insalyon.creatis.moteur.plugins.workflowsdb.bean;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -45,6 +46,7 @@ public class ProcessorID implements Serializable {
 
     private String workflowID;
     private String processor;
+    private String jobID;
 
     public ProcessorID() {
     }
@@ -70,6 +72,15 @@ public class ProcessorID implements Serializable {
 
     public void setProcessor(String processor) {
         this.processor = processor;
+    }
+
+    @Column(name = "job_id")
+    public String getJobID() {
+        return jobID;
+    }
+
+    public void setJobID(String jobID) {
+        this.jobID = jobID;
     }
 
     @Override
